@@ -16,26 +16,27 @@ namespace dotnet_rpg.Controllers
         public CharacterController(ICharacterService characterService)
         {
             _characterService = characterService;
-
         }
+        //GET character/getall
         [HttpGet("GetAll")]
         public async Task<IActionResult> Get()
         {
+            //calls the method of our character service that returns a list of all the characters
             return Ok(await _characterService.GetAllCharacters());
         }
-
+        //GET character/{id}
         [HttpGet("{id}")]
         public async Task<IActionResult> GetSingle(int id)
         {
             return Ok(await _characterService.GetCharacterById(id));
         }
-
+        //POST character/
         [HttpPost]
         public async Task<IActionResult> AddCharacter(AddCharacterDto newCharacter)
         {           
             return Ok(await _characterService.AddCharacter(newCharacter));
         }
-
+        //POST character/
         [HttpPut]
         public async Task<IActionResult> UpdateCharacter(UpdateCharacterDto updatedCharacter)
         {           
@@ -46,7 +47,7 @@ namespace dotnet_rpg.Controllers
             }
             return Ok(response);
         }
-
+        //DELETE character/{id}
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
