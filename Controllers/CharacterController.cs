@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using dotnet_rpg.Dtos.Character;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Authorization;
+using System.Linq;
+using System.Security.Claims;
 
 namespace dotnet_rpg.Controllers
 {
