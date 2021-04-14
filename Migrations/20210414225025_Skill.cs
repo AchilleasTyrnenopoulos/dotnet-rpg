@@ -7,7 +7,7 @@ namespace dotnet_rpg.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Skill",
+                name: "Skills",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
@@ -17,7 +17,7 @@ namespace dotnet_rpg.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Skill", x => x.Id);
+                    table.PrimaryKey("PK_Skills", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -37,9 +37,9 @@ namespace dotnet_rpg.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_CharacterSkills_Skill_SkillId",
+                        name: "FK_CharacterSkills_Skills_SkillId",
                         column: x => x.SkillId,
-                        principalTable: "Skill",
+                        principalTable: "Skills",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -56,7 +56,7 @@ namespace dotnet_rpg.Migrations
                 name: "CharacterSkills");
 
             migrationBuilder.DropTable(
-                name: "Skill");
+                name: "Skills");
         }
     }
 }

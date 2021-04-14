@@ -18,6 +18,6 @@ namespace dotnet_rpg.Dtos.Character
 
         public RpgClass Class {get; set;} = RpgClass.Warrior;
         public GetWeaponDto Weapon { get; set; }
-        public List<GetSkillDto> Skill {get; set;}
+        public List<GetSkillDto> Skills {get; set;}
     }
 }

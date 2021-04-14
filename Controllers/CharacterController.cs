@@ -40,7 +40,7 @@ namespace dotnet_rpg.Controllers
         {           
             return Ok(await _characterService.AddCharacter(newCharacter));
         }
-        //POST character/
+        //PUT character/
         [HttpPut]
         public async Task<IActionResult> UpdateCharacter(UpdateCharacterDto updatedCharacter)
         {           
